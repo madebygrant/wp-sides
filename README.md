@@ -31,11 +31,11 @@ add_action( 'enqueue_block_editor_assets', function(){
 *Note: In the example above, change the location to where your sidebar JS file is located.*
 
 ### Sidebar JS file
-To see how the controls work and to implement them, please look at the [sample file](https://github.com/madebygrant/wp-sides/blob/main/assets/js/sidebars/sidebar-sample.js). It contains all the available controls and how to have several groups of controls in a single sidebar. 
+To see how the controls work and to implement them, please look at the [sample file](../assets/js/sidebars/sidebar-sample.js). It contains all the available controls and how to have several groups of controls in a single sidebar. 
 
 Some knowledge in React and development experience with the block editor would be beneficial.
 
-[A link to the sample sidebar file](https://github.com/madebygrant/wp-sides/blob/main/assets/js/sidebars/sidebar-sample.js)
+[A link to the sample sidebar file](../assets/js/sidebars/sidebar-sample.js)
 
 ### Available Controls
 - Colour Select
@@ -51,3 +51,18 @@ Some knowledge in React and development experience with the block editor would b
 - Textarea field
 - Time
 - Toggle button
+
+### Available Icons
+You can assign different icons to the sidebars. Here's some that are included with the plugin.
+
+To use: *wpSides.icons.**icon_slug_here***
+
+- *Slider*: **slider**
+- *Pen icon in a circle*: **edit_circle**
+- *'I' icon in a circle*: **info_circle**
+- *Lightning bolt*: **lightning**
+- *Sliders*: **sliders**
+- *Smiley face*: **smiley**
+- *Star*: **star**
+- *Star in a circle*: **star_circle**
+- *Toggle*: **toggles**
