@@ -65,4 +65,4 @@ To use: *wpSides.icons.**icon_slug_here***
 - *Smiley face*: **smiley**
 - *Star*: **star**
 - *Star in a circle*: **star_circle**
-- *Toggle*: **toggles**
+- *Toggles*: **toggles**
