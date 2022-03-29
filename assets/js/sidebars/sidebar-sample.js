@@ -64,12 +64,12 @@
 
                 // Adds the sidebar to the 'Plugins' section
                 el(wpSides.AddSidebar,
-                    { target: details.name, icon: details.icon }, details.title
+                    { target: details.name }, details.title
                 ),
 
                 // Create the sidebar
                 el(wpSides.Sidebar,
-                    { name: details.name, icon: details.icon, title: details.title },
+                    { name: details.name, title: details.title },
 
                     // ------------------ Add your options below ------------------
 
