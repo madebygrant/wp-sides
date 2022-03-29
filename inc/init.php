@@ -6,13 +6,17 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-/// -------------------------------------------------------
+// ------------------------------------------------------
 
 if ( !class_exists( 'WPSides\Scripts' ) ) {
 
     class Scripts{
 
-        // Load scripts/styles for the backend
+        /**
+         * Load scripts/styles for the backend
+         *
+         * @return void
+         */
         function editor_assets() {
             $file_url = plugins_url( '/assets/js/wpsides.min.js', dirname( __FILE__ ) );
             $images_url = plugins_url( '/assets/images/', dirname( __FILE__ ) );
@@ -24,8 +28,16 @@ if ( !class_exists( 'WPSides\Scripts' ) ) {
             ]);
         }
 
-        /// ---------------------------
+        // ---------------------------
 
+        /**
+         * Load the 'wpsides' JS file with a custom <script> tag with the 'type' attribute
+         *
+         * @param string $tag The HTML tag
+         * @param string $handle The handle text assigned
+         * @param string $src The url of the script file
+         * @return string The HTML tag
+         */
         function add_type_attribute($tag, $handle, $src) {
             if ( 'wpsides' !== $handle ) {
                 return $tag;
@@ -44,19 +56,19 @@ if ( !class_exists( 'WPSides\Scripts' ) ) {
     new \WPSides\Scripts;
 }
 
-/// -------------------------------------------------------
+// ------------------------------------------------------
 
-//if ( !function_exists( 'WPSides\style' ) ) {
+/**
+ * Add custom styles
+ */
+add_action( 'admin_head', function(){
+    echo "<style class='wp-sides'>
+    *[class*='wpsides-row'] .block-editor-url-input input[type=text]{ border: 1px solid #757575 !important; border-radius: 2px; width: 100%; }
+    *[class*='wpsides-row'] .components-truncate{ text-overflow: unset !important; white-space: normal !important; }
+    </style>";
+});
 
-    add_action( 'admin_head', function(){
-        echo "<style class='wp-sides'>
-        *[class*='wpsides-row'] .block-editor-url-input input[type=text]{ border: 1px solid #757575 !important; border-radius: 2px; width: 100%; }
-        *[class*='wpsides-row'] .components-truncate{ text-overflow: unset !important; white-space: normal !important; }
-        </style>";
-    });
-//}
-
-/// -------------------------------------------------------
+// ------------------------------------------------------
 
 if ( !function_exists( 'WPSides\meta' ) ) {
 
