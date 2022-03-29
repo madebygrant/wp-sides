@@ -7,7 +7,9 @@ A WordPress plugin and developer's toolkit for creating, adding custom sidebars 
  - [Instructions](#instructions)
  - [Enqueue 'WP Sides' sidebar JS files](#enqueue-wp-sides-sidebar-js-files)
  - [Sidebar JS file](#sidebar-js-file)
+ - [Retrieve the sidebar meta data](#retrieve-the-sidebar-meta-data)
  - [Available Controls](#available-controls)
+ - [Available Icons](#available-icons)
 
 ### Instructions
 1. Download and install the plugin
@@ -36,6 +38,16 @@ To see how the controls work and to implement them, please look at the [sample f
 Some knowledge in React and development experience with the block editor would be beneficial.
 
 [A link to the sample sidebar file](../main/assets/js/sidebars/sidebar-sample.js)
+
+### Retrieve the sidebar meta data
+The plugin includes a method to retrieve the meta data of the sidebars to use in your themes. It returns an array of the meta data.
+
+- $metaKey: The meta key of the sidebar meta field is required.
+- $postID: The post ID is required. Pass the post ID of the page/post you want to fetch the meta field data from.
+
+```php
+$meta = \WPSides\meta($metaKey, $postID);
+```
 
 ### Available Controls
 - Colour Select

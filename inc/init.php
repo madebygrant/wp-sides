@@ -60,8 +60,16 @@ if ( !class_exists( 'WPSides\Scripts' ) ) {
 
 if ( !function_exists( 'WPSides\meta' ) ) {
 
+    /**
+     * Get the sidebar meta data
+     * 
+     * @param string $key The meta key
+     * @param int $post_id The post ID
+     * 
+     * @return array Returns an array
+     */
     function meta($key, $post_id = false){
-        $post_id = !$post_id ? (in_the_loop() ? get_the_ID() : get_queried_object_id() ) : $post_id;
+        $post_id = !$post_id ? ( in_the_loop() ? get_the_ID() : get_queried_object_id() ) : $post_id;
         $meta = get_post_meta($post_id, $key, 1);
         
         if($meta){
